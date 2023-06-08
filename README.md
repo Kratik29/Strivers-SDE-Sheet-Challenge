@@ -1,3 +1,4 @@
 # Strivers-SDE-Sheet-Challenge
-This repo contains my approach to the problems
+this repositry contains all solution of the striver's sde sheet;
+
 

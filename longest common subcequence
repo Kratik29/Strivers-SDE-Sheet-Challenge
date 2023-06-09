@@ -1,0 +1,23 @@
+int findLongestConseqSubseq(int arr[], int N)
+    {
+      //Your code here
+      unordered_map<int,int> m;
+      for(int i=0;i<N;i++){
+          m[arr[i]]++;
+          
+      }
+      
+      int res=1;
+      for(auto x:m){
+          if(m.find(x.first-1)==m.end())
+          {
+              int curr=1;
+              while(m.find(x.first+curr)!=m.end())
+                  curr++;
+                  res=max(res,curr);
+              
+          }
+      }
+      return res;
+      
+    }

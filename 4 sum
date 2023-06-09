@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+string fourSum(vector<int> arr, int target, int n) {
+    // Write your code here.
+        
+        // int n=arr.size();
+        // set<vector<int>>s;
+        sort(arr.begin(),arr.end());
+        for(int i=0;i<n-3;i++){
+            for(int j=i+1;j<n-2;j++){
+                int left=j+1;
+                int right=n-1;
+                while(left<right){
+                    
+                    if((long long)arr[i]+arr[j]==(long long)target-arr[left]-arr[right]){
+                        // s.insert({arr[i],arr[j],arr[left],arr[right]});
+                        return "Yes";
+                        
+                    }else if((long long)arr[i]+arr[j]+arr[left]+arr[right]>(long long)target){
+                        right--;
+                    }else{
+                        left++;
+                    }
+                }
+            }
+        }
+       
+        return "No";
+}

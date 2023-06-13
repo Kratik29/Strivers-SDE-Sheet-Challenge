@@ -1,0 +1,44 @@
+Node *addTwoNumbers(Node *num1, Node *num2)
+{
+    // Write your code here.
+    int carry=0;
+    Node* t=num1,*te=num2;
+    Node* head=new Node(-1);
+    Node* temp=head;
+    while(t && te ){
+        int sum=(t->data+te->data+carry);
+            Node* ll=new Node(sum%10);
+            temp->next=ll;
+            temp=temp->next;
+
+            carry=sum/10;
+            t=t->next;
+            te=te->next;
+    }
+   
+   while(t){
+        int sum=(t->data+carry);
+            Node* ll=new Node(sum%10);
+            temp->next=ll;
+            temp=temp->next;
+
+            carry=sum/10;
+            t=t->next;
+   }
+   while(te){
+        int sum=(te->data+carry);
+            Node* ll=new Node(sum%10);
+            temp->next=ll;
+            temp=temp->next;
+
+            carry=sum/10;
+            te=te->next;
+   }
+   if(carry){
+       temp->next=new Node(carry);
+   }
+   return head->next;
+
+
+    
+}

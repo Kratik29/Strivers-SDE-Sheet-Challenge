@@ -1,0 +1,16 @@
+bool detectCycle(Node *head)
+{
+	//	Write your code here
+    
+    
+    Node* fast=head->next;
+    Node* slow=head;
+    while(fast && fast->next && slow ){
+        if(fast==slow)
+        return true;
+        fast=fast->next->next;
+        slow=slow->next;
+    }
+    return false;
+    
+}
